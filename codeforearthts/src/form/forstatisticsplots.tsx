@@ -9,7 +9,7 @@ export default function ForStatisticsPlots(){
       </div>
       <div className="relative flex justify-start columns-2">
         <div className="relative left-0"><Show /></div>
-        <div className="relative right-0"><AsFunctionOf /></div>
+        <div className="relative right-0"></div>
       </div>
     </>
       );}
@@ -32,12 +32,6 @@ export function Show() {
 <FormControlLabel control={<Checkbox size='small'/>} label='Mean OB' />
 <FormControlLabel control={<Checkbox size='small'/>} label='Median FC' />
 <FormControlLabel control={<Checkbox size='small'/>} label='Median OB' />
-<FormControlLabel control={<Checkbox size='small'/>} label='Bias' />
-<FormControlLabel control={<Checkbox size='small'/>} label='RMSE' />
-<FormControlLabel control={<Checkbox size='small'/>} label='MNMB' />
-<FormControlLabel control={<Checkbox size='small'/>} label='FGE' />
-<FormControlLabel control={<Checkbox size='small'/>} label='Correlation' />
-<FormControlLabel disabled control={<Checkbox size='small'/>} label='Sample Size' />
 <FormControlLabel control={<Checkbox size='small'/>} label='Taylor Diagram' />
 </FormGroup>) 
 
