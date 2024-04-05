@@ -15,20 +15,18 @@ export default function ForStatisticsPlots(){
       );}
 
 export function Show() {
-  function ShowMeanFC(checked: boolean){
-    if (checked == true){
-      console.log("on")
-    }
-    else{
-      console.log("off")
-    }
-
-  }
+  function ShowMeanFC(checked: boolean){if (checked == true){console.log("on")}else{console.log("off")}}
+  function ShowMeanOB(checked: boolean){if (checked == true){console.log("on")}else{console.log("off")}}
+  function ShowMedianFC(checked: boolean){if (checked == true){console.log("on")}else{console.log("off")}}
+  function ShowMedianOB(checked: boolean){if (checked == true){console.log("on")}else{console.log("off")}}
+  function ShowTaylorDiagram(checked: boolean){if (checked == true){console.log("on")}else{console.log("off")}}
+  
 
   return (<FormGroup className="relative left-0">
   <FormLabel id="show">Show: </FormLabel>
   {/* labels can be created dynamically by using label='${getLabel}' */}
 <FormControlLabel control={<Checkbox onChange={e => ShowMeanFC(e.target.checked) } size='small'/>} label='Mean FC' />
+<FormControlLabel control={<Checkbox onChange={e => ShowMeanOB(e.target.checked) } size='small'/>} label='Mean OB' />
 <FormControlLabel control={<Checkbox size='small'/>} label='Mean OB' />
 <FormControlLabel control={<Checkbox size='small'/>} label='Median FC' />
 <FormControlLabel control={<Checkbox size='small'/>} label='Median OB' />

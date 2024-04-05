@@ -1,6 +1,6 @@
 
 //import ExperimentSelector from "@/form/forallplots";
-import DateTimeRange from "@/form/dateselector";
+//import DateTimeRange from "@/form/dateselector";
 import ForStatisticsPlots from "@/form/forstatisticsplots";
 import PlotIt from "@/form/submit";
 import dynamic from "next/dynamic";
@@ -15,7 +15,7 @@ export default function Home() {
       
       <ForStatisticsPlots/>
       
-      <div className="mt-5"><DateTimeRange/></div>
+      <div className="mt-5"></div>
       <div className="mt-5"><PlotIt/></div>
       
      </div>
