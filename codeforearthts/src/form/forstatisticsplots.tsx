@@ -27,10 +27,9 @@ export function Show() {
   {/* labels can be created dynamically by using label='${getLabel}' */}
 <FormControlLabel control={<Checkbox onChange={e => ShowMeanFC(e.target.checked) } size='small'/>} label='Mean FC' />
 <FormControlLabel control={<Checkbox onChange={e => ShowMeanOB(e.target.checked) } size='small'/>} label='Mean OB' />
-<FormControlLabel control={<Checkbox size='small'/>} label='Mean OB' />
-<FormControlLabel control={<Checkbox size='small'/>} label='Median FC' />
-<FormControlLabel control={<Checkbox size='small'/>} label='Median OB' />
-<FormControlLabel control={<Checkbox size='small'/>} label='Taylor Diagram' />
+<FormControlLabel control={<Checkbox onChange={e => ShowMedianFC(e.target.checked) }size='small'/>} label='Median FC' />
+<FormControlLabel control={<Checkbox onChange={e => ShowMedianOB(e.target.checked) }size='small'/>} label='Median OB' />
+<FormControlLabel control={<Checkbox onChange={e => ShowTaylorDiagram(e.target.checked) }size='small'/>} label='Taylor Diagram' />
 </FormGroup>) 
 
 
