@@ -72,7 +72,7 @@ def calculateData(asAFunctionOf: str="time", param: str="CO", verificationType: 
     return data
         
 
-def makePlot(data):
+def makeLinePlot(data):
     dataForPlot = DataFrame.from_dict(data,orient="index")  
     plot = px.line(dataForPlot)
     return plot
@@ -131,7 +131,7 @@ def openFile(timeInterval, experimentId, param, wlenString):
 #timeDict.update(  { datetime.strptime(dataList[0], '%Y%m%d %H:%M'),timeDict[datetime.strptime(dataList[0], '%Y%m%d %H:%M')].append([float(dataList[5]),float(dataList[6].rstrip("\n"))]) })
 
 
-makePlot(calculateData()).show()
+#makeLinePlot(calculateData()).show()
 
 
 
