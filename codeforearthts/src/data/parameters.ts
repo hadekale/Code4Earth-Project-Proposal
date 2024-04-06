@@ -13,9 +13,9 @@ let parameters: Parameter[] = [
 ];
 
 
+export let selectedParameter: Parameter
 
-
-
+export const getParameter= () => selectedParameter.id;
 
 
 
@@ -34,7 +34,8 @@ export const updateParameter = (id: string, checked: boolean) =>{
   
       if (parameter){
           parameter.checked = checked;
-      } else{
+          selectedParameter= parameter;
+          } else{
           throw new Error("There is no such parameter")
       }
   };
