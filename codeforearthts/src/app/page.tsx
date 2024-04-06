@@ -1,8 +1,9 @@
 
 //import ExperimentSelector from "@/form/forallplots";
+import TimeIntervalSelector from "@/form/dateselector";
 import DateTimeRange from "@/form/dateselector";
-import ExperimentSelector from "@/form/forallplots";
-import ForStatisticsPlots from "@/form/forstatisticsplots";
+import ExperimentSelector, { VerificationTypeSelector } from "@/form/forallplots";
+import ForStatisticsPlots, { AsFunctionOf } from "@/form/forstatisticsplots";
 import PlotIt from "@/form/submit";
 import dynamic from "next/dynamic";
 //import { experiments } from "@/lib/data";
@@ -14,7 +15,9 @@ export default function Home() {
       <NewPlot />
       <div className=" absolute right-24 columns-1">
         <ExperimentSelector/>
+        <VerificationTypeSelector/>
         <ForStatisticsPlots />
+        <TimeIntervalSelector/>
 
         <div className="mt-5"></div>
         <div className="mt-5"><PlotIt /></div>

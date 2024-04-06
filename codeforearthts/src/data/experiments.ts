@@ -13,3 +13,5 @@ export let selectedExperiment: Experiment;
 export const selectExperiment = (experiment: Experiment) =>{
    selectedExperiment= experiment;
   };
+
+  export const getExperiment = () => selectedExperiment;

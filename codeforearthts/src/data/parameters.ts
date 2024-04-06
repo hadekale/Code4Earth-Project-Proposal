@@ -19,8 +19,6 @@ let parameters: Parameter[] = [
 
 
 
-
-
 export const getParameters = () => parameters;
 
 export const addParameter = (parameter: Parameter) => {

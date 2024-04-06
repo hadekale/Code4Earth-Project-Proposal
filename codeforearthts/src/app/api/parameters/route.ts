@@ -1,4 +1,4 @@
-import { addParameter, getParameters, updateParameter } from "@/data/parameters";
+import { addParameter,getParameters, updateParameter } from "@/data/parameters";
 import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (req:NextRequest, res: NextResponse)=>{

@@ -1,9 +1,18 @@
-type VerificationType = {
+export type VerificationType = {
     id: string;
-    selected: boolean;
 }
 
-let verificationTypes: VerificationType[] = [
-    {id:'bias', selected:false},
-    {id:'mrse', selected:false},
+export const verificationTypes: VerificationType[] = [
+    {id:'bias'},
+    {id:'mrse'},
 ];
+
+
+
+export let selectedVerificationType: VerificationType;
+
+export const selectVerificationType = (VerificationType: VerificationType) =>{
+   selectedVerificationType= VerificationType;
+  };
+
+  export const getVerificationType = () => selectedVerificationType.id;

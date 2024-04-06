@@ -1,7 +1,17 @@
-export type FunctionOf={id: string}
+export type asFunctionOf = {
+    id: string;
+}
 
-export let functionOf: FunctionOf;
+export const functionsOf: asFunctionOf[] = [
+    {id:'time'},
+    {id:'leadtime'},
+];
 
-export const setFunctionOf = (selectedFunction: FunctionOf) =>{
-   functionOf= selectedFunction;
+
+export let selectedFunction: asFunctionOf;
+
+export const selectFunction = (prop: asFunctionOf) =>{
+   selectedFunction= prop;
   };
+
+  export const getFunction= () => selectedFunction.id;

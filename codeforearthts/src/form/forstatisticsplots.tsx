@@ -1,6 +1,9 @@
 'use client';
+import { asFunctionOf, functionsOf, selectFunction,  } from '@/data/asfunctionof';
+import { Experiment } from '@/data/experiments';
 import { updateParameter } from '@/data/parameters';
-import { Checkbox, FormGroup, FormControlLabel, FormControl, RadioGroup, FormLabel, Radio } from '@mui/material';
+import { selectVerificationType } from '@/data/verification';
+import { Checkbox, FormGroup, FormControlLabel, FormControl, RadioGroup, FormLabel, Radio, Autocomplete, TextField, AutocompleteChangeDetails, AutocompleteChangeReason, CircularProgress } from '@mui/material';
 import React from 'react';
 export default function ForStatisticsPlots(){
 
@@ -38,10 +41,11 @@ export function Show() {
 
 
 }
-export function AsFunctionOf() {
+/*export function AsFunctionOf() {
   const [value, setValue] = React.useState("time");
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value);
+    setFunctionOf(value);
   };
   return (
     <FormControl>
@@ -58,6 +62,80 @@ export function AsFunctionOf() {
       </RadioGroup>
     </FormControl>
   );
+}*/
+export function AsFunctionOf() {
+  const [open, setOpen] = React.useState(false);
+  const [options, setOptions] = React.useState<readonly asFunctionOf[]>([]);
+  const loading = open && options.length === 0;
+
+  React.useEffect(() => {
+    let active = true;
+
+    if (!loading) {
+      return undefined;
+    }
+
+    (async () => {
+
+      if (active) {
+        setOptions([...functionsOf]);
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
+  }, [loading]);
+
+  React.useEffect(() => {
+    if (!open) {
+      setOptions([]);
+    }
+  }, [open]);
+
+
+  function HandleSelect(event: React.SyntheticEvent<Element, Event>, value: asFunctionOf | null, reason: AutocompleteChangeReason, details?: AutocompleteChangeDetails<Experiment> | undefined): void {
+    if(value == null)
+      console.log("As a Function of cannot be empty")
+    else{
+      selectFunction(value)
+    }
+  }
+
+  return (
+    <Autocomplete
+      onChange={HandleSelect}
+      id="as a function of"
+      sx={{ width: 300 }}
+      open={open}
+      onOpen={() => {
+        setOpen(true);
+      }}
+      onClose={() => {
+        setOpen(false);
+      }}
+      isOptionEqualToValue={(option, value) => option.id === value.id}
+      getOptionLabel={(option) => option.id}
+      options={options}
+      loading={loading}
+      renderInput={(params) => (
+        <TextField
+          {...params}
+          label="As A Function Of"
+          InputProps={{
+            ...params.InputProps,
+            endAdornment: (
+              <React.Fragment>
+                {loading ? <CircularProgress color="inherit" size={20} /> : null}
+                {params.InputProps.endAdornment}
+              </React.Fragment>
+            ),
+          }}
+        />
+      )}
+    />
+  );
 }
+
 
   
