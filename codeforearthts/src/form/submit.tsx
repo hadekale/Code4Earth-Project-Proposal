@@ -5,22 +5,21 @@ import { selectedParameter } from "@/data/parameters";
 import { selectedExperiment } from "@/data/experiments";
 import { selectedTimeInterval } from "@/data/timeinterval";
 import { selectedVerificationType } from "@/data/verification";
-
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 export default function PlotIt(){
-  
-  
+  const { push } = useRouter();
 
-  function MyCallback(arg0: string): void {
-    throw new Error("Function not implemented.");
-  }
-
-    return (<Button onClick={()=>{httpGetAsync(`/?asAFunctionOf=${selectedFunction.id}&parameter=${selectedParameter.id}&experimentId=${selectedExperiment.id}&verificationType=${selectedVerificationType.id}&timeInterval=${selectedTimeInterval.id}`,MyCallback)}}
+    return (<Button onClick={()=>{
+      push(`/?asAFunctionOf=${selectedFunction.id}&parameter=${selectedParameter.id}&experimentId=${selectedExperiment.id}&verificationType=${selectedVerificationType.id}&timeInterval=${selectedTimeInterval.id}`)
+    }}
       
     
     variant="contained">Plot It</Button>)
     
 
 }
+
 
 async function httpGetAsync(theUrl: string | URL, callback: (arg0: string) => void) {
   let xmlHttpReq = new XMLHttpRequest();
