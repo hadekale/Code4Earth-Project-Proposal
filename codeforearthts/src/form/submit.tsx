@@ -1,18 +1,22 @@
 "use client";
-import { PlusIcon } from "@heroicons/react/24/outline";
 import { Button } from "@mui/material";
-import Link from "next/link";
-import Plot from "react-plotly.js";
-
+import {selectedFunction} from "@/data/asfunctionof"
+import { selectedParameter } from "@/data/parameters";
+import { selectedExperiment } from "@/data/experiments";
+import { selectedTimeInterval } from "@/data/timeinterval";
+import { selectedVerificationType } from "@/data/verification";
 
 export default function PlotIt(){
+  `/?asAFunctionOf=${selectedFunction.id}&parameter=${selectedParameter.id}&experimentId=${selectedExperiment.id}&verificationType=${selectedVerificationType.id}&timeInterval=${selectedTimeInterval.id}`
 
+    return <Button onClick={()=>
+      console.log(`/?asAFunctionOf=${selectedFunction.id}&parameter=${selectedParameter.id}&experimentId=${selectedExperiment.id}&verificationType=${selectedVerificationType.id}&timeInterval=${selectedTimeInterval.id}`)}
     
-    return <Button onClick={() => { 
-        window.location.href="codeforearthts/src/app/plotly/app.tsx"
-      }} variant="contained">Plot It</Button>
+    variant="contained">Plot It</Button>
+    
 
 
 
 
 }
+
