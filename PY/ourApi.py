@@ -34,8 +34,8 @@ app = FastAPI()
 def getHtml(asAFunctionOf: AsAFunctionOf, parameter: Parameter, experimentId: ExperimentId, verificationType: VerificationType, timeInterval: TimeInterval):
     data=functions.calculateData(asAFunctionOf=asAFunctionOf.value, param=parameter.value, verificationType=verificationType.value, experimentId=experimentId.value, timeInterval=timeInterval.value)
     plot=functions.makeLinePlot(data)
-    plot.write_html("/root/Desktop/Code4Earth-Project-Proposal/PY/tempHtml.html")
-    htmlFileToBeSent = open('/root/Desktop/Code4Earth-Project-Proposal/PY/tempHtml.html', 'r', encoding="utf8")
+    plot.write_html("C:/Users/Administrator/Desktop/Project/Code4Earth-Project-Proposal/PY/tempHtml.html")
+    htmlFileToBeSent = open('C:/Users/Administrator/Desktop/Project/Code4Earth-Project-Proposal/PY/tempHtml.html', 'r', encoding="utf8")
     htmlString = htmlFileToBeSent.read()
     print(htmlString)
     return htmlString

@@ -3,14 +3,16 @@
 import Image from "next/image";
 import Button from '@mui/material/Button';
 
+
 function getValueOf(elementId: string) {
-  return document.getElementById(elementId).value
+  return (document.getElementById(elementId) as HTMLSelectElement).value
 }
 
 function updatePlot() {
-  let plotSrc = "http://localhost:8000/?asAFunctionOf=" + getValueOf("id possible functions") + "&parameter=" + getValueOf("id parameters") + "&experimentId=" + getValueOf("id experiment id") + "&verificationType=" + getValueOf("id verification type") + "&timeInterval=" + getValueOf("id time interval")
-  document.getElementById('plot shower').src = plotSrc;
+  let plotSrc = "http://hakandenizkale.com:8000/?asAFunctionOf=" + getValueOf("id possible functions") + "&parameter=" + getValueOf("id parameters") + "&experimentId=" + getValueOf("id experiment id") + "&verificationType=" + getValueOf("id verification type") + "&timeInterval=" + getValueOf("id time interval");
+  (document.getElementById('plot shower') as HTMLIFrameElement).src = plotSrc;
 }
+
 //asAFunctionOf = time & parameter=CO & experimentId=oper & verificationType=bias & timeInterval=20201001 - 20201031
 
 
@@ -22,7 +24,7 @@ export default function Home() {
     <main className="h-screen bg-white">
       <div className="grid grid-cols-5 h-full gap-5 p-10	">
 
-        <iframe className="w-full h-full col-span-4" id="plot shower" src="http://localhost:8000/?asAFunctionOf=time&parameter=CO&experimentId=oper&verificationType=bias&timeInterval=20201001-20201031"></iframe>
+        <iframe className="w-full h-full col-span-4" id="plot shower" src="http://hakandenizkale.com:8000/?asAFunctionOf=time&parameter=CO&experimentId=oper&verificationType=bias&timeInterval=20201001-20201031"></iframe>
 
         <div className="w-full h-full col-span-1 text-black	">
 
