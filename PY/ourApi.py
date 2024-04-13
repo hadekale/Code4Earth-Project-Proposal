@@ -25,7 +25,7 @@ class VerificationType(str, Enum):
 
 class TimeInterval(str, Enum):
     interval1 = "20201001-20201031"
-    interval2 = "20201001-20201031"
+    interval2 = "20201101-20201130"
 
 app = FastAPI()
 
