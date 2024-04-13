@@ -128,6 +128,7 @@ def openFile(timeInterval, experimentId, param, wlenString):
     return open(f"C:/Users/Administrator/Desktop/Project/Code4Earth-Project-Proposal/PY/example_data/{timeInterval}/expid={experimentId},param={param}{wlenString}.txt","r")
 
 
+
 #timeDict.update(  { datetime.strptime(dataList[0], '%Y%m%d %H:%M'),timeDict[datetime.strptime(dataList[0], '%Y%m%d %H:%M')].append([float(dataList[5]),float(dataList[6].rstrip("\n"))]) })
 
 
